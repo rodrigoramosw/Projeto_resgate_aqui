@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" href="produtos.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>{{titulo}}</h1>
+        <p>{{subtitulo}}</p>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Botão de Voltar -->
+        <a href="pagina.html">
+            <button class="back-button">Voltar</button>
+        </a>
+
+        <section>
+            <h2>{{secaoTitulo}}</h2>
+
+            {{#each animais}}
+            <article>
+                <img src="{{imagem}}" alt="{{alt}}">
+                <div class="animal-details">
+                    <h3>{{nome}}</h3>
+                    <p>{{descricao}}</p>
+                    <button>Quero Adotar</button>
+                </div>
+            </article>
+            {{/each}}
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; {{ano}} {{rodapeTexto}}</p>
+    </footer>
+
+</body>
+</html>

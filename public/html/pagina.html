@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adote um Amigo</title>
+    <link rel="stylesheet" href="/css/pagina.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Banner Principal -->
+    <header class="banner">
+        <div class="container">
+            <h1>Adote um Amigo ❤</h1>
+            <p>Dê uma segunda chance a um pet. Adote e transforme uma vida!</p>
+            <a href="#adocao" class="btn btn-primary">Conheça os Pets</a>
+        </div>
+    </header>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="sobre.html" class="btn">Sobre</a>
+            <a href="produtos.html" class="btn">Produtos</a>
+            <a href="#adocao" class="btn">Pets para Adoção</a>
+        </div>
+    </nav>
+
+    <!-- Seção: Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Sobre o Projeto</h2>
+            <p>Somos uma organização dedicada a promover a adoção de animais abandonados e dar-lhes uma nova chance de viver. Através de parcerias com clínicas veterinárias, profissionais da área e voluntários, buscamos transformar a vida de pets e seus novos donos.</p>
+        </div>
+    </section>
+
+    <!-- Seção: Produtos -->
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <p>Oferecemos produtos exclusivos para cuidar do seu novo amigo, desde alimentação até brinquedos e acessórios para garantir o bem-estar do seu pet.</p>
+        </div>
+    </section>
+
+    <!-- Seção: Animais para Adoção -->
+    <section id="adocao" class="animais">
+        <div class="container">
+            <h2>🐾 Nossos Pets para Adoção</h2>
+            <div id="pets-container" class="pets-container"></div>
+
+            <script id="pets-template" type="text/x-handlebars-template">
+                {{#each pets}}
+                    <div class="pet">
+                        <img src="{{imagem}}" alt="{{nome}} para adoção">
+                        <h3>{{nome}}</h3>
+                        <p>{{idade}}, {{descricao}}</p>
+                        <a href="produtos.html" class="btn btn-primary adopt-btn">Quero Adotar</a>
+                    </div>
+                {{/each}}
+            </script>
+        </div>
+    </section>
+
+    <!-- Seção: Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <h2>📢 Depoimentos de Adotantes</h2>
+            <div id="depoimentos-container" class="depoimentos-container"></div>
+            <script id="depoimentos-template" type="text/x-handlebars-template">
+                {{#each depoimentos}}
+                    <div class="depoimento">
+                        <p>"{{texto}}"</p>
+                        <h4>- {{autor}}</h4>
+                    </div>
+                {{/each}}
+            </script>
+        </div>
+    </section>
+
+    <!-- Seção: Profissionais da Área -->
+    <section class="profissionais">
+        <div class="container">
+            <h2>👩‍⚕️ Para Profissionais</h2>
+            <p>Se você é veterinário, adestrador ou trabalha com pets, junte-se a nós para transformar vidas!</p>
+            <a href="cadastro-profissionais.html" class="btn btn-primary">Cadastre-se</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Adote um Amigo. Todos os direitos reservados.</p>
+            <p>📍 Recife, PE | 📞 (81) 98002-8922 | 📧 contato@adoteamigo.com</p>
+            <div class="social">
+                <a href="#">🐶 Instagram</a> | 
+                <a href="#">🐾 Facebook</a> | 
+                <a href="#">🐕 Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/pagina.js"></script>
+</body>
+
+</html>

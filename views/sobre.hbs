@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{tituloPagina}}</title>
+    <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+
+    <section id="sobre" class="sobre">
+        <button class="btn" onclick="window.location.href = 'pagina.html';">HOME</button>
+
+        <h2>Sobre o Projeto "{{tituloProjeto}}"</h2>
+
+        {{#each paragrafosIntroducao}}
+            <p>{{{this}}}</p>
+        {{/each}}
+
+        <h3>Por Que Adotar um Pet?</h3>
+        <p>{{introducaoRazoes}}</p>
+        <ul>
+            {{#each razoesAdotar}}
+                <li><strong>{{titulo}}:</strong> {{descricao}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Missão</h3>
+        <p>{{missao}}</p>
+
+        <h3>Visão</h3>
+        <p>{{visao}}</p>
+
+        <h3>Valores</h3>
+        <ul>
+            {{#each valores}}
+                <li><strong>{{titulo}}:</strong> {{descricao}}</li>
+            {{/each}}
+        </ul>
+
+        <p>{{mensagemFinal}}</p>
+    </section>
+
+</body>
+</html>

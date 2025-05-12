@@ -1,0 +1,19 @@
+<div class="card shadow-sm mb-5">
+    <div class="card-header bg-secondary text-white">
+        <h4>Formulário de Cadastro de Pessoa</h4>
+    </div>
+    <div class="card-body">
+        <form id="user-form" class="needs-validation" novalidate>
+            {{!-- Campos como nome, email, senha, etc --}}
+            {{#each camposPessoa}}
+                <div class="mb-3">
+                    <label for="{{id}}" class="form-label">{{label}}</label>
+                    <input type="{{tipo}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" required>
+                    <div class="invalid-feedback">{{feedback}}</div>
+                </div>
+            {{/each}}
+
+            <button type="submit" class="btn btn-primary w-100">Cadastrar Pessoa</button>
+        </form>
+    </div>
+</div>

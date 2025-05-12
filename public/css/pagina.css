@@ -1,0 +1,259 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Banner Principal */
+.banner {
+    background-color: #0984e3;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.banner .btn-primary {
+    background-color: #74b9ff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.banner .btn-primary:hover {
+    background-color: #0984e3;
+}
+
+/* Barra de Navegação */
+.navbar {
+    background-color: #2d3436;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.navbar .btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 15px;
+    padding: 10px 20px;
+    background-color: #0984e3;
+    border-radius: 5px;
+}
+
+.navbar .btn:hover {
+    background-color: #74b9ff;
+}
+
+/* Seções */
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Animais */
+.pets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pet {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.pet h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.pet p {
+    margin-top: 10px;
+}
+
+.pet:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.adopt-btn {
+    background-color: #0984e3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-btn:hover {
+    background-color: #74b9ff;
+}
+
+/* Depoimentos */
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.depoimento {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.depoimento p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.depoimento h4 {
+    text-align: right;
+    font-size: 1.2rem;
+    color: #0984e3;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .social a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+    color: #74b9ff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar .btn {
+        margin: 10px 5px;
+        font-size: 0.9rem;
+    }
+
+    .pets-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pet {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .depoimentos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .depoimento {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    footer p,
+    footer .social {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+    .banner .btn-primary {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .pet h3 {
+        font-size: 1.2rem;
+    }
+
+    .adopt-btn {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+
+    .depoimento p {
+        font-size: 1rem;
+    }
+}

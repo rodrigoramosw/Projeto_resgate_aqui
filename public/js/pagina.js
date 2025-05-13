@@ -1,34 +1,75 @@
-// Dados dos Pets
-const petsData = [
-    { imagem: "/img/dog1.jpg", nome: "Rex", idade: "3 anos", descricao: "Dócil e brincalhão." },
-    { imagem: "/img/gato1.jpg", nome: "Mia", idade: "2 anos", descricao: "Amorosa e carinhosa." },
-    { imagem: "/img/dog2.jpg", nome: "Thor", idade: "4 anos", descricao: "Energético e leal." }
-];
+// Dados dos pets embutidos diretamente no JS
+const mockPets = {
+    pets: [
+        {
+            imagem: "dog1.jpg",
+            nome: "Rex",
+            idade: "3 anos",
+            descricao: "Dócil e brincalhão."
+        },
+        {
+            imagem: "gato1.jpg",
+            nome: "Mia",
+            idade: "2 anos",
+            descricao: "Amorosa e carinhosa."
+        },
+        {
+            imagem: "dog2.jpg",
+            nome: "Thor",
+            idade: "4 anos",
+            descricao: "Energético e leal."
+        }
+    ]
+};
 
-// Dados dos Depoimentos
-const depoimentosData = [
-    { texto: "Adotar o Max foi a melhor decisão da minha vida. Ele trouxe alegria para nossa casa!", autor: "Juliana Souza" },
-    { texto: "A Mel nos escolheu! Nunca imaginamos que um resgatado poderia ser tão amoroso.", autor: "Carlos Mendes" }
-];
+// Dados dos depoimentos embutidos
+const mockDepoimentos = {
+    depoimentos: [
+        {
+            texto: "Adotei a Luna e ela mudou minha vida. Cheia de amor e energia!",
+            autor: "Ana Clara"
+        },
+        {
+            texto: "O processo foi rápido e muito bem orientado. Recomendo demais!",
+            autor: "Carlos Eduardo"
+        },
+        {
+            texto: "Hoje acordo todos os dias com um amigo fiel ao meu lado. Gratidão.",
+            autor: "Mariana Alves"
+        }
+    ]
+};
 
-// Função para renderizar os Pets
-function renderPets() {
-    const source = document.getElementById("pets-template").innerHTML;
-    const template = Handlebars.compile(source);
-    const html = template({ pets: petsData });
-    document.getElementById("pets-container").innerHTML = html;
+// Função para carregar pets com Handlebars
+function loadPets() {
+    const templateElement = document.getElementById("pets-template");
+    const container = document.getElementById("pets-container");
+
+    if (!templateElement || !container) return;
+
+    const templateSource = templateElement.innerHTML;
+    const template = Handlebars.compile(templateSource);
+    const html = template(mockPets);
+
+    container.innerHTML = html;
 }
 
-// Função para renderizar os Depoimentos
-function renderDepoimentos() {
-    const source = document.getElementById("depoimentos-template").innerHTML;
-    const template = Handlebars.compile(source);
-    const html = template({ depoimentos: depoimentosData });
-    document.getElementById("depoimentos-container").innerHTML = html;
+// Função para carregar depoimentos com Handlebars
+function loadDepoimentos() {
+    const templateElement = document.getElementById("depoimentos-template");
+    const container = document.getElementById("depoimentos-container");
+
+    if (!templateElement || !container) return;
+
+    const templateSource = templateElement.innerHTML;
+    const template = Handlebars.compile(templateSource);
+    const html = template(mockDepoimentos);
+
+    container.innerHTML = html;
 }
 
-// Renderiza os templates ao carregar a página
+// Inicializa funções quando a página carrega
 document.addEventListener("DOMContentLoaded", () => {
-    renderPets();
-    renderDepoimentos();
+    loadPets();
+    loadDepoimentos();
 });

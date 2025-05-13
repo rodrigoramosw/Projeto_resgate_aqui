@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // A autenticação pode ser ajustada conforme a necessidade
         if (usuario === 'admin' && senha === '123') {
             // Se o login for bem-sucedido, redireciona para a página
-            window.location.href = '/html/pagina.html'; // Altere o caminho para o que for necessário
+            window.location.href = '/pagina'; // Alterado de '/pagina.html' para '/pagina'
         } else {
             // Se o login falhar, exibe uma mensagem de erro
             const template = Handlebars.compile(document.getElementById('error-template').innerHTML);
